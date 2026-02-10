@@ -1,0 +1,265 @@
+[
+  {
+    "secretaria": "SECRETARIA MUNICIPAL DE ASSISTENCIAL SOCIAL E CIDADANIA",
+    "nome": "CREAS - Centro de Referência Especializado de Assistência Social",
+    "gestor": "VIVIANE KERLYN DA SILVA PIRES",
+    "endereco": "Condomínio Edifício Cidade Corumba - R. Treze de Junho, 1703 - Centro, Corumbá - MS",
+    "coordenadas": "-19.002392043106113, -57.65901377369649",
+    "email": "creas@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0067",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "CENTRO POP - Centro de Referência Especializado para População em Situação de Rua",
+    "gestor": "ARIELLY OLIVEIRA GARCIA",
+    "endereco": "R. América, 1480 - Centro, Corumbá - MS",
+    "coordenadas": "-19.00570487880611, -57.655659771843105",
+    "email": "centropop@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0066",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "Casa de Passagem Albergue da Fraternidade José Lins",
+    "gestor": "DEYSE MENDES BRAGA",
+    "endereco": "Rua Edu Rocha, lote 85– Bairro Nossa Senhora de Fatima  - 79332-110",
+    "coordenadas": "-19.019408949712265, -57.65784983264014",
+    "email": "albergue@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0084",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "Casa do Migrante",
+    "gestor": "Iber Mosciaro Gomes",
+    "endereco": "Rua Dom Aquino, 884 – Bairro Centro",
+    "coordenadas": "-19.001357013966295, -57.651399766339495",
+    "email": "casa.imigrante@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0075",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "CCI - Centro de Convivência dos Idosos Benedita R. Leite de Barros",
+    "gestor": "DONIZETE AIRES CARDOSO",
+    "endereco": "R. Pará, s/n - Jardim dos Estados, Corumbá - MS",
+    "coordenadas": "-19.03391083079727, -57.656598354601",
+    "email": "cci@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "-",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "CAIAD - Casa de Acolhimento Institucional Dona Laura Pinheiro Martins",
+    "gestor": "FRANCIELE SILVA MARTINEZ",
+    "endereco": "R. Piauí - Vila Guarani, Corumbá - MS",
+    "coordenadas": "-19.03691790104218, -57.65612399499",
+    "email": "abrigo.laura@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0089",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "CAIN - Casa de Acolhimento Institucional Adiles de Figueiredo Ribeiro",
+    "gestor": "GENISE MORAES CASTELLO",
+    "endereco": "R. Tiradentes, 130 - Centro, Corumbá - MS, 79302-052",
+    "coordenadas": "-19.01010859815413, -57.64509367403663",
+    "email": "abrigo.adiles@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0087",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "CRAS I - Centro de Referência de Assistência Social",
+    "gestor": "Claudia Letícia de Oliveira Monteiro Silva",
+    "endereco": "Rua Caceres s/N - Bairro Centro América",
+    "coordenadas": "-19.01201662635623, -57.636737954750984",
+    "email": "cras1@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0115",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": " CRAS II  - Centro de Referência de Assistência Social",
+    "gestor": "ADRIANA SELASCO FONTES PIZZARRO",
+    "endereco": "Rua José de Barros Maciel s/n  - Bairro Guatós",
+    "coordenadas": "-19.05092759284636, -57.64482740832275",
+    "email": "cras2@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0128",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "CRAS IV - Centro de Referência de Assistência Social",
+    "gestor": "JOCYARA CESAR DE SOUZA",
+    "endereco": "R. Joaquim Murtinho, 2117 - Aeroporto, Corumbá - MS, 79332-050",
+    "coordenadas": "-19.012201340617892, -57.65972511231682",
+    "email": "cras4@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0135",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "CRAS ALBUQUERQUE - Centro de Referência de Assistência Social",
+    "gestor": "Ana Laura Gomes da Silva Carvalho",
+    "endereco": "Rua Marechal Deodoro, S/N - Bairro Jd. Dos Estados - Praça CEU.",
+    "coordenadas": "-19.03364028859421, -57.65804001108642",
+    "email": "cras.albuquerque@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0154",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "CRAS ITINERANTE - Centro de Referência de Assistência Social",
+    "gestor": "GEDIELY CAVALCANTE GOMES",
+    "endereco": "R. Vinte Um de Setembro, 62 - Bairro Cervejaria, Corumbá - MS, 79331-090",
+    "coordenadas": "-18.999985187628397, -57.662218593556126",
+    "email": "cras.itinerante@corumba.ms.gov.br ",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0133",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "CRAM - Centro de Referência de Atendimento a Mulher",
+    "gestor": "CHRISTIANE MELGAR SALVATIERRA",
+    "endereco": "R. Quinze de Novembro, 659 A - Centro, Corumbá - MS, 79300-060",
+    "coordenadas": "-19.004046717466657, -57.653012803075505",
+    "email": "cram@corumba.ms.gov.br",
+    "telefone": null,
+    "whatsapp": "(67) 98191-0170",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "PATRULHA MARIA DA PENHA",
+    "gestor": null,
+    "endereco": "R. Quinze de Novembro, 659 - Centro, Corumbá - MS, 79300-060",
+    "coordenadas": "-19.004012481276785, -57.65303560192856",
+    "email": "patrulhamariadapenha@corumba.ms.gov.br",
+    "telefone": "(67) 3907-5455 ",
+    "whatsapp": "(67) 99940-8672",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "Condomínio dos Idosos - Margarida Costa Brambilla.",
+    "gestor": null,
+    "endereco": "180 R. José B Maciel - Guaicurus\r\nCorumbá, Mato Grosso do Sul",
+    "coordenadas": "-19.05168620563712, -57.64798200769065",
+    "email": null,
+    "telefone": "(67) 3234-3401",
+    "whatsapp": "-",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "Asilo \"São José da Velhice Desamparada\"",
+    "gestor": null,
+    "endereco": "R. Colombo, 867 - Centro, Corumbá - MS, 79332-020",
+    "coordenadas": "-19.005097417980803, -57.64930346689031",
+    "email": null,
+    "telefone": "(67) 3231-3888",
+    "whatsapp": "-",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "Casa de recuperação infantil padre Antonio muller",
+    "gestor": null,
+    "endereco": "R. Rio Grande do Sul, 935 - Cristo Redentor, Corumbá - MS, 79311-100",
+    "coordenadas": "-19.02860123425097, -57.64096513009929",
+    "email": "CRICMPCAIJ@GMAIL.COM",
+    "telefone": null,
+    "whatsapp": "(67) 98484-8221",
+    "setores": []
+  },
+  {
+    "secretaria": null,
+    "nome": "Casa dos Conselhos",
+    "gestor": null,
+    "endereco": "R. Dom Aquino, 547 - Centro, Corumbá - MS, 79302-040",
+    "coordenadas": "-19.000537004459314, -57.64817287851094",
+    "email": null,
+    "telefone": null,
+    "whatsapp": null,
+    "setores": [
+      {
+        "nome": "CASA DOS CONSELHOS",
+        "gestor": "Sylvia Rôa Adelaido do Espirito Santo",
+        "numero": "3907 - 5352",
+        "whatsapp": "3907 - 5352",
+        "email": "-"
+      }
+    ]
+  },
+  {
+    "secretaria": null,
+    "nome": " Secretaria Municipal de Assistência Social e Cidadania",
+    "gestor": "Secretário xxxxxxxxxxxxxxx",
+    "endereco": "Rua Cuiabá, nº 1042, Centro, entre as ruas Frei Mariano e 15 de Novembro",
+    "coordenadas": "-19.003125826142444, -57.65229073722188",
+    "email": null,
+    "telefone": null,
+    "whatsapp": null,
+    "setores": [
+      {
+        "nome": "SECRETARIA MUNICIPAL DE ASSISTÊNCIA SOCIAL E CIDADANIA",
+        "gestor": "BEATRIZ ROSÁLIA RIBEIRO CAVASSA DE OLIVEIRA",
+        "numero": "(67) 3907-5180",
+        "whatsapp": "-",
+        "email": "-"
+      }
+    ]
+  },
+  {
+    "secretaria": null,
+    "nome": "CASA DA CIDADANIA / SUPERINTENDÊNCIA DE POLÍTICAS PÚBLICAS",
+    "gestor": "WILLIAM DUARTE DE ARAÚJO",
+    "endereco": "Rua Cuiabá, nº 1042, Centro, entre as ruas Frei Mariano e 15 de Novembro",
+    "coordenadas": "-19.003125826142444, -57.65229073722188",
+    "email": "cidadania.direitoshumanos@corumba.ms.gov.br \r\nsmasc.supdepoliticaspublicas@corumba.ms.gov.br",
+    "telefone": "99924-3041",
+    "whatsapp": "3907 - 5434",
+    "setores": [
+      {
+        "nome": "SUPERINTENDÊNCIA DE POLÍTICAS PÚBLICAS",
+        "gestor": "WILIAM DUARTE DE ARAÚJO",
+        "numero": null,
+        "whatsapp": null,
+        "email": "smasc.supdepoliticaspublicas@corumba.ms.gov.br"
+      }
+    ]
+  },
+  {
+    "secretaria": null,
+    "nome": "ALMOXARIFADO",
+    "gestor": null,
+    "endereco": "Rua Ladário, 604 – Bairro Centro",
+    "coordenadas": "-19.000396072571366, -57.646183438108594",
+    "email": null,
+    "telefone": null,
+    "whatsapp": null,
+    "setores": [
+      {
+        "nome": "ALMOXARIFADO",
+        "gestor": "Ligeano Moura Cunha",
+        "numero": null,
+        "whatsapp": "(67) 98191-0108",
+        "email": "almoxarifado.smasc@corumba.ms.gov.br"
+      }
+    ]
+  }
+]

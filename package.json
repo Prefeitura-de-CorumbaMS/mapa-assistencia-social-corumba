@@ -1,0 +1,64 @@
+{
+  "name": "mapatur-monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo do Mapa Turismo (MapaTur) — Guia de Turismo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --workspace=@mapatur/api",
+    "dev:worker": "npm run dev --workspace=@mapatur/etl-worker",
+    "dev:web": "npm run dev --workspace=@mapatur/web",
+    "build:api": "npm run build --workspace=@mapatur/api",
+    "build:worker": "npm run build --workspace=@mapatur/etl-worker",
+    "build:web": "npm run build --workspace=@mapatur/web",
+    "prisma:generate": "npm run prisma:generate --workspace=@mapatur/database",
+    "prisma:migrate": "npm run prisma:migrate --workspace=@mapatur/database",
+    "prisma:studio": "npm run prisma:studio --workspace=@mapatur/database",
+    "prisma:triggers": "node scripts/apply-triggers.js",
+    "setup:db": "npm run prisma:migrate && npm run prisma:triggers",
+    "test:mysql": "node scripts/test-mysql-connection.js",
+    "test:postgres": "node scripts/test-postgres-connection.js",
+    "create:superadmin": "node scripts/create-superadmin.js",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:start:api": "pm2 start ecosystem.config.js --only mapatur-api",
+    "pm2:start:web": "pm2 start ecosystem.config.js --only mapatur-web",
+    "pm2:stop": "pm2 stop all",
+    "pm2:stop:api": "pm2 stop mapatur-api",
+    "pm2:stop:web": "pm2 stop mapatur-web",
+    "pm2:restart": "pm2 restart all",
+    "pm2:restart:api": "pm2 restart mapatur-api",
+    "pm2:restart:web": "pm2 restart mapatur-web",
+    "pm2:reload": "pm2 reload all",
+    "pm2:reload:api": "pm2 reload mapatur-api",
+    "pm2:reload:web": "pm2 reload mapatur-web",
+    "pm2:delete": "pm2 delete all",
+    "pm2:delete:api": "pm2 delete mapatur-api",
+    "pm2:delete:web": "pm2 delete mapatur-web",
+    "pm2:logs": "pm2 logs",
+    "pm2:logs:api": "pm2 logs mapatur-api",
+    "pm2:logs:web": "pm2 logs mapatur-web",
+    "pm2:monit": "pm2 monit",
+    "pm2:status": "pm2 status",
+    "pm2:save": "pm2 save",
+    "pm2:startup": "pm2 startup"
+  },
+  "keywords": [
+    "health",
+    "gis",
+    "etl",
+    "corumba"
+  ],
+  "author": "Prefeitura de Corumbá",
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "dotenv-cli": "^11.0.0",
+    "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "mysql2": "^3.15.3"
+  }
+}
