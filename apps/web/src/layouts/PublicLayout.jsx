@@ -73,8 +73,8 @@ export default function PublicLayout() {
             style={{
               display: 'block',
               alignSelf: 'center',
-              height: '60px',
-              maxWidth: '120px',
+              height: '58px',
+              width: 'auto',
               objectFit: 'contain',
               flexShrink: 0
             }}

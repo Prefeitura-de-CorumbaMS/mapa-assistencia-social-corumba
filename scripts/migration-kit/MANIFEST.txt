@@ -1,0 +1,250 @@
+================================================================================
+                        MIGRATION KIT - MANIFEST
+================================================================================
+
+Versão: 1.0.0
+Data de Criação: 2026-02-12
+Tamanho Total: ~1.2MB
+Total de Arquivos: 38
+
+================================================================================
+CONTEÚDO DO PACOTE
+================================================================================
+
+📂 ESTRUTURA DE DIRETÓRIOS:
+migration-kit/
+├── backend/ (3 arquivos)
+├── database/ (3 arquivos)
+├── docs/ (1 arquivo)
+├── frontend/ (5 arquivos)
+│   ├── layouts/ (1 arquivo)
+│   ├── pages/ (3 arquivos)
+│   └── utils/ (1 arquivo)
+└── icones/ (22 arquivos PNG)
+
+📄 ARQUIVOS PRINCIPAIS:
+- install.sh (Script de instalação automatizado)
+- README.md (Visão geral e instruções)
+- QUICKSTART.md (Guia rápido de 5 minutos)
+- MANIFEST.txt (Este arquivo)
+
+================================================================================
+DETALHAMENTO POR CATEGORIA
+================================================================================
+
+🗄️ BANCO DE DADOS (3 arquivos):
+├── 01_analytics_tables.sql ................ Criação das 4 tabelas de analytics
+├── 02_icones_system.sql ................... Sistema de ícones + 22 inserts
+└── 03_prisma_schema_reference.prisma ...... Modelos Prisma de referência
+
+🔧 BACKEND (3 arquivos):
+├── analytics.routes.js .................... 7 endpoints de analytics
+├── icone.routes.js ........................ 7 endpoints de ícones
+└── analytics-aggregation.job.js ........... 3 jobs de background
+
+🎨 FRONTEND (5 arquivos):
+├── pages/
+│   ├── AnalyticsPage.jsx .................. Página de analytics com gráficos
+│   ├── DashboardPage.jsx .................. Dashboard com cards de acesso
+│   └── UnidadesPage.jsx ................... CRUD de unidades com 6+ abas
+├── utils/
+│   └── analytics.js ....................... 10 funções de tracking
+└── layouts/
+    └── AdminLayout.jsx .................... Layout admin com menu lateral
+
+🖼️ ÍCONES (22 arquivos PNG):
+- icone_ass_social_01.png .................. CRAS
+- icone_ass_social_02.png .................. CREAS
+- icone_ass_social_03.png .................. Abrigo Institucional
+- icone_ass_social_04.png .................. Casa de Passagem
+- icone_ass_social_05.png .................. Centro de Convivência
+- icone_ass_social_06.png .................. Centro Pop
+- icone_ass_social_07.png .................. Unidade de Acolhimento
+- icone_ass_social_08.png .................. Centro Dia
+- icone_ass_social_09.png .................. Casa Lar
+- icone_ass_social_10.png .................. SCFV - Serviço de Convivência
+- icone_ass_social_11.png .................. Programa Criança Feliz
+- icone_ass_social_12.png .................. PAIF - Serviço de Proteção
+- icone_ass_social_13.png .................. PAEFI - Serviço Proteção Especial
+- icone_ass_social_14.png .................. Conselho Tutelar
+- icone_ass_social_15.png .................. MSE - Medida Socioeducativa
+- icone_ass_social_16.png .................. Casa de Acolhimento
+- icone_ass_social_17.png .................. Residência Inclusiva
+- icone_ass_social_18.png .................. Centro de Referência
+- icone_ass_social_19.png .................. Serviço de Acolhimento
+- icone_ass_social_20.png .................. Unidade de Atendimento
+- icone_ass_social_21.png .................. Centro de Apoio
+- icone_ass_social_22.png .................. Espaço de Convivência
+
+📚 DOCUMENTAÇÃO (4 arquivos):
+├── README.md .............................. Visão geral completa (~250 linhas)
+├── QUICKSTART.md .......................... Guia rápido de instalação
+├── docs/INSTALLATION_GUIDE.md ............. Guia detalhado (~600 linhas)
+└── MANIFEST.txt ........................... Este arquivo
+
+================================================================================
+FUNCIONALIDADES IMPLEMENTADAS
+================================================================================
+
+✅ SISTEMA DE ANALYTICS:
+  - 4 tabelas de banco de dados
+  - 8 tipos de eventos rastreáveis
+  - 7 endpoints de API
+  - 2 páginas React (Dashboard + Analytics)
+  - Gráficos interativos (Recharts)
+  - Estatísticas de acesso em tempo real
+  - Jobs de agregação automática
+  - Limpeza de dados antigos
+
+✅ SISTEMA DE ÍCONES:
+  - Migração de URL para ID
+  - 22 ícones de Assistência Social
+  - Tabela prod_icone com foreign keys
+  - 7 endpoints de API (CRUD completo)
+  - Upload de novos ícones
+  - Reordenação em lote
+  - Seleção visual no admin
+
+✅ ADMIN COM ABAS:
+  - Layout otimizado com menu lateral
+  - Modal de unidades com 6+ abas
+  - Nome da unidade acima das abas
+  - Formulários organizados por categoria
+  - Mapa interativo de localização
+  - Upload de imagens
+  - Gerenciamento de redes sociais
+  - Lista de serviços por unidade
+
+================================================================================
+REQUISITOS DE SISTEMA
+================================================================================
+
+🔹 Servidor:
+  - Node.js 16+ e npm
+  - MySQL 5.7+ ou MariaDB 10+
+  - Sistema operacional: Linux/macOS/Windows
+
+🔹 Backend:
+  - Express.js
+  - Prisma ORM (ou Sequelize)
+  - Middleware de autenticação (JWT/Session)
+
+🔹 Frontend:
+  - React 17+
+  - Redux ou React Query
+  - Ant Design 5+
+
+🔹 Dependências NPM (instaladas automaticamente):
+  Frontend:
+    - recharts
+    - @ant-design/icons
+    - antd
+    - dayjs
+    - react-leaflet
+    - leaflet
+
+  Backend:
+    - multer
+    - node-cron
+
+================================================================================
+INSTALAÇÃO
+================================================================================
+
+1️⃣ INSTALAÇÃO AUTOMATIZADA (Recomendado):
+   $ ./install.sh
+
+   O script irá:
+   ✓ Verificar pré-requisitos
+   ✓ Coletar informações do projeto
+   ✓ Executar migrações SQL
+   ✓ Copiar arquivos
+   ✓ Instalar dependências
+   ✓ Fornecer próximos passos
+
+2️⃣ INSTALAÇÃO MANUAL:
+   Consulte: docs/INSTALLATION_GUIDE.md
+
+3️⃣ GUIA RÁPIDO (5 minutos):
+   Consulte: QUICKSTART.md
+
+================================================================================
+AÇÕES MANUAIS PÓS-INSTALAÇÃO
+================================================================================
+
+□ Atualizar schema.prisma com novos modelos
+□ Executar: npx prisma generate
+□ Registrar rotas no arquivo principal do backend
+□ Registrar rotas no router do frontend
+□ Configurar jobs de agregação (node-cron)
+□ Adicionar tracking nos componentes relevantes
+□ Testar todas as funcionalidades
+
+================================================================================
+TESTES
+================================================================================
+
+🧪 Backend:
+   $ curl -X POST http://localhost:3000/api/analytics/event \
+       -H "Content-Type: application/json" \
+       -d '{"session_id":"test","event_type":"PAGE_VIEW"}'
+
+🧪 Frontend:
+   - Acesse: http://localhost:3000/admin/dashboard
+   - Acesse: http://localhost:3000/admin/analytics
+   - Teste cadastro de unidades com ícones
+
+🧪 Banco de Dados:
+   $ mysql -u user -p -e "SELECT * FROM analytics_event LIMIT 10"
+
+================================================================================
+SUPORTE E DOCUMENTAÇÃO
+================================================================================
+
+📖 Documentação Completa: docs/INSTALLATION_GUIDE.md
+📖 Guia Rápido: QUICKSTART.md
+📖 Visão Geral: README.md
+
+🐛 Troubleshooting: docs/INSTALLATION_GUIDE.md#-troubleshooting
+
+================================================================================
+ORIGEM E CRÉDITOS
+================================================================================
+
+Projeto Base: Mapa da Assistência Social de Corumbá
+Commits Relevantes:
+  - 771e9c5: Sistema de analytics e cards de estatísticas
+  - 3e3727e: Mapa da Assistência Social (inicial)
+
+Desenvolvido para facilitar a implementação de funcionalidades entre
+aplicações de mapa similares.
+
+================================================================================
+LICENÇA
+================================================================================
+
+Este Migration Kit é parte do projeto Mapa da Assistência Social de Corumbá.
+Consulte o arquivo LICENSE do projeto original para mais informações.
+
+================================================================================
+CHANGELOG
+================================================================================
+
+v1.0.0 (2026-02-12):
+  - Lançamento inicial
+  - Sistema de analytics completo
+  - Sistema de ícones (URL → ID)
+  - Admin com abas
+  - Script de instalação automatizado
+  - Documentação completa
+
+================================================================================
+
+Para começar a instalação, execute:
+  $ ./install.sh
+
+Para mais informações:
+  $ cat README.md
+  $ cat QUICKSTART.md
+
+================================================================================

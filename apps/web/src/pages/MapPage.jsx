@@ -61,15 +61,24 @@ const CustomMarker = ({ unidade, onClick, customIcon, isSelected }) => {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleClick = () => {
-    // Zoom moderado que mantém ícones visíveis
+    const currentZoom = map.getZoom()
     const targetZoom = 16
-    
-    // Aplica zoom com animação suave, centralizando no marcador
-    map.flyTo([unidade.latitude, unidade.longitude], targetZoom, {
-      duration: 0.8,
-      easeLinearity: 0.25
-    })
-    
+
+    // Só fazer zoom se necessário (zoom atual menor que 14)
+    if (currentZoom < 14) {
+      // Aplica zoom com animação suave
+      map.flyTo([unidade.latitude, unidade.longitude], targetZoom, {
+        duration: 0.8,
+        easeLinearity: 0.25
+      })
+    } else {
+      // Apenas centralizar suavemente sem zoom (sem oscilação)
+      map.panTo([unidade.latitude, unidade.longitude], {
+        duration: 0.3,
+        easeLinearity: 0.5
+      })
+    }
+
     onClick(unidade)
   }
 
@@ -203,38 +212,6 @@ const MapViewController = ({ selectedUnidade, filteredUnidades, selectedIconUrl 
   return null
 }
 
-// Componente para detectar zoom e ocultar marcadores
-const ZoomHandler = ({ onZoomStart, onZoomEnd }) => {
-  const map = useMap()
-
-  useEffect(() => {
-    let zoomTimeout
-
-    const handleZoomStart = () => {
-      onZoomStart()
-    }
-
-    const handleZoomEnd = () => {
-      // Pequeno delay para garantir que o zoom terminou
-      clearTimeout(zoomTimeout)
-      zoomTimeout = setTimeout(() => {
-        onZoomEnd()
-      }, 100)
-    }
-
-    map.on('zoomstart', handleZoomStart)
-    map.on('zoomend', handleZoomEnd)
-
-    return () => {
-      map.off('zoomstart', handleZoomStart)
-      map.off('zoomend', handleZoomEnd)
-      clearTimeout(zoomTimeout)
-    }
-  }, [map, onZoomStart, onZoomEnd])
-
-  return null
-}
-
 // Fix Leaflet default icon issue
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
@@ -284,7 +261,6 @@ export default function MapPage() {
   const [especialidadeModalVisible, setEspecialidadeModalVisible] = useState(false)
   const [setoresModalVisible, setSetoresModalVisible] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [isZooming, setIsZooming] = useState(false)
 
   // Estados de busca
   const [searchType, setSearchType] = useState(null) // 'bairro', 'unidade'
@@ -980,7 +956,10 @@ export default function MapPage() {
                           fontWeight: '600',
                         }}
                       >
-                        Ver Serviços ({setoresData.data.length})
+                        {selectedUnidade?.nome === 'Casa dos Conselhos'
+                          ? `Ver Conselhos (${setoresData.data.length})`
+                          : `Ver Serviços (${setoresData.data.length})`
+                        }
                       </Button>
                     </div>
                   )}
@@ -1436,10 +1415,6 @@ export default function MapPage() {
               filteredUnidades={filteredUnidades}
               selectedIconUrl={selectedIconUrl}
             />
-            <ZoomHandler 
-              onZoomStart={() => setIsZooming(true)}
-              onZoomEnd={() => setIsZooming(false)}
-            />
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -1450,7 +1425,7 @@ export default function MapPage() {
               updateWhenZooming={false}
             />
 
-            {!isZooming && filteredUnidades.map((unidade) => {
+            {filteredUnidades.map((unidade) => {
               if (!unidade.latitude || !unidade.longitude) {
                 console.error('Unidade sem coordenadas:', unidade);
                 return null;

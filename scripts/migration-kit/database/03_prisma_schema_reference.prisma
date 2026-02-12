@@ -1,0 +1,118 @@
+// =====================================================
+// REFERÊNCIA: Schema Prisma para Analytics e Ícones
+// =====================================================
+// Adicione esses modelos ao seu arquivo schema.prisma
+
+// =====================================================
+// ANALYTICS MODELS
+// =====================================================
+
+model ANALYTICS_Event {
+  id         BigInt   @id @default(autoincrement())
+  session_id String   @db.VarChar(255)
+  event_type String   @db.VarChar(50) // PAGE_VIEW, SEARCH, UNIT_VIEW, MAP_CLICK, CONTACT_CLICK, SOCIAL_CLICK, FILTER_APPLIED, ERROR
+  event_data String?  @db.Text // JSON
+  user_agent String?  @db.VarChar(500)
+  ip_hash    String?  @db.VarChar(64) // SHA256 hash
+  referrer   String?  @db.VarChar(500)
+  created_at DateTime @default(now())
+
+  @@index([session_id])
+  @@index([event_type])
+  @@index([created_at])
+  @@map("analytics_event")
+}
+
+model ANALYTICS_Session {
+  id               BigInt   @id @default(autoincrement())
+  session_id       String   @unique @db.VarChar(255)
+  first_seen       DateTime @default(now())
+  last_seen        DateTime @default(now())
+  user_agent       String?  @db.VarChar(500)
+  ip_hash          String?  @db.VarChar(64)
+  page_views       Int      @default(0)
+  searches         Int      @default(0)
+  unit_views       Int      @default(0)
+  contacts         Int      @default(0)
+  duration_seconds Int?
+
+  @@index([first_seen])
+  @@index([last_seen])
+  @@map("analytics_session")
+}
+
+model ANALYTICS_UnitStats {
+  id                  BigInt   @id @default(autoincrement())
+  unit_id             Int
+  date                DateTime @db.Date
+  views               Int      @default(0)
+  map_clicks          Int      @default(0)
+  contacts_whatsapp   Int      @default(0)
+  contacts_phone      Int      @default(0)
+  contacts_email      Int      @default(0)
+  contacts_directions Int      @default(0)
+
+  @@unique([unit_id, date])
+  @@index([date])
+  @@map("analytics_unit_stats")
+}
+
+model ANALYTICS_SearchStats {
+  id            BigInt   @id @default(autoincrement())
+  search_term   String   @db.VarChar(255)
+  search_type   String   @db.VarChar(50) // texto_livre, bairro, unidade, categoria
+  count         Int      @default(0)
+  last_searched DateTime @default(now())
+
+  @@unique([search_term, search_type])
+  @@index([last_searched])
+  @@map("analytics_search_stats")
+}
+
+// =====================================================
+// ÍCONES MODEL
+// =====================================================
+
+model PROD_Icone {
+  id       Int     @id @default(autoincrement())
+  nome     String  @unique @db.VarChar(100)
+  url      String  @db.VarChar(500)
+  ativo    Boolean @default(true)
+  ordem    Int     @default(0)
+
+  // Relação com unidades - AJUSTE O NOME DO MODELO CONFORME SUA APLICAÇÃO
+  unidades PROD_UnidadeAssistenciaSocial[]
+
+  @@index([ativo])
+  @@index([ordem])
+  @@map("prod_icone")
+}
+
+// =====================================================
+// ALTERAÇÃO NO MODEL DE UNIDADES
+// =====================================================
+// Adicione esses campos ao seu model de unidades existente
+// IMPORTANTE: O nome do model deve corresponder ao da sua aplicação
+
+model PROD_UnidadeAssistenciaSocial {
+  id        Int    @id @default(autoincrement())
+  nome      String @db.VarChar(255)
+  // ... seus campos existentes ...
+
+  // NOVOS CAMPOS PARA ÍCONES
+  icone_url String? @db.VarChar(500)  // Deprecated - manter para compatibilidade
+  id_icone  Int?
+
+  // RELAÇÃO COM ÍCONE
+  icone PROD_Icone? @relation(fields: [id_icone], references: [id], onDelete: SetNull)
+
+  @@index([id_icone])
+  @@map("prod_unidade")
+}
+
+// =====================================================
+// APÓS ADICIONAR AO SCHEMA.PRISMA:
+// =====================================================
+// 1. Execute: npx prisma generate
+// 2. Execute: npx prisma db push (ou use as migrações SQL fornecidas)
+// 3. Verifique se os modelos foram gerados corretamente

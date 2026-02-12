@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'mapatur-api',
+      name: 'mapasocial-api',
       script: './apps/api/src/index.js',
       cwd: './',
       instances: 1,
@@ -40,16 +40,16 @@ module.exports = {
       instance_var: 'INSTANCE_ID',
     },
     {
-      name: 'mapatur-web',
-      script: 'bash',
-      args: 'start-vite.sh',
+      name: 'mapasocial-web',
+      script: 'npm',
+      args: 'run preview',
       cwd: './apps/web',
       instances: 1,
       autorestart: true,
       watch: false,
       max_memory_restart: '1G',
       env: {
-        NODE_ENV: 'development',
+        NODE_ENV: 'production',
         PORT: 8012,
       },
       error_file: './logs/pm2-error.log',
