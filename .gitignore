@@ -51,3 +51,6 @@ coverage/
 temp/
 .temp/
 nul
+
+# Migration Kit (uso local apenas)
+scripts/migration-kit/
