@@ -448,6 +448,11 @@ export const apiSlice = createApi({
     // }),
 
     // Analytics - Dashboard queries
+    getAccessStats: builder.query({
+      query: () => '/analytics/access-stats',
+      keepUnusedDataFor: 60, // Cache por 1 minuto
+    }),
+
     getAnalyticsOverview: builder.query({
       query: ({ start_date, end_date } = {}) => ({
         url: '/analytics/overview',
@@ -616,6 +621,7 @@ export const {
   useGetETLExecutionsQuery,
   useGetETLStatsQuery,
   useGetLastUpdateQuery,
+  useGetAccessStatsQuery,
   useGetAnalyticsOverviewQuery,
   useGetPopularUnitsQuery,
   useGetSearchTermsQuery,

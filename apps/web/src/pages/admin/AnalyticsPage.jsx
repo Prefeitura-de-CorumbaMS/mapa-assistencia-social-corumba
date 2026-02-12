@@ -77,7 +77,7 @@ export default function AnalyticsPage() {
 
   return (
     <div style={{ padding: '24px' }}>
-      <h1 style={{ marginBottom: '24px' }}>Analytics - MapaTur</h1>
+      <h1 style={{ marginBottom: '24px' }}>Analytics - Mapa da Assistência Social</h1>
 
       {/* Filtros */}
       <Card style={{ marginBottom: 16 }}>
@@ -188,7 +188,7 @@ export default function AnalyticsPage() {
       </Card>
 
       {/* Tabela de Unidades Mais Populares */}
-      <Card title="Unidades Turísticas Mais Populares" style={{ marginBottom: 16 }}>
+      <Card title="Unidades de Assistência Social Mais Acessadas" style={{ marginBottom: 16 }}>
         {errorUnits ? (
           <Alert message="Erro ao carregar unidades populares" type="error" showIcon />
         ) : (

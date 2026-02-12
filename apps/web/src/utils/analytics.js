@@ -25,14 +25,6 @@ const generateUUID = () => {
 
 // Enviar evento para API (assíncrono, não bloqueia UI)
 const sendEvent = async (eventType, eventData) => {
-  // ANALYTICS TEMPORARIAMENTE DESABILITADO
-  // Descomente o código abaixo quando as tabelas de analytics forem criadas
-  if (import.meta.env.DEV) {
-    console.log('[Analytics] Event tracked (disabled):', eventType, eventData);
-  }
-  return; // Early return - não envia para API
-
-  /* CÓDIGO COMENTADO - REABILITAR QUANDO TABELAS EXISTIREM
   try {
     const payload = {
       session_id: getSessionId(),
@@ -59,7 +51,6 @@ const sendEvent = async (eventType, eventData) => {
       console.error('[Analytics] Error tracking event:', error);
     }
   }
-  */
 };
 
 /**
