@@ -289,6 +289,13 @@ export default function MapPage() {
     }
   }, []) // Executa apenas uma vez ao montar
 
+  useEffect(() => {
+    if (selectedIconUrl) {
+      setSelectedUnidade(null)
+      setSidebarCollapsed(false)
+    }
+  }, [selectedIconUrl])
+
   const { data, isLoading, isError, error } = useGetUnidadesQuery(undefined, {
     refetchOnMountOrArgChange: 300, // Refetch apenas se dados tiverem mais de 5 minutos
     refetchOnFocus: false, // Não refetch ao voltar para a aba
@@ -1473,9 +1480,11 @@ export default function MapPage() {
               setSelectedIconUrl(isDeselecting ? null : iconUrl)
 
               // Limpar outros filtros ao usar filtro de ícone
-              setSearchType(null)
-              setSearchValue(null)
-              setSearchText('')
+              handleResetSearch()
+
+              // Voltar para a tela inicial ao aplicar filtro por icone
+              setSelectedUnidade(null)
+              setSidebarCollapsed(false)
 
               // Rastrear filtro por ícone
               if (!isDeselecting) {
